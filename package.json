@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@deepsquare/cypress-iframe": "^2.0.0",
     "cypress": "^9.5.2"
   }
 }
