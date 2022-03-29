@@ -15,3 +15,27 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  
+  Cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run cypress
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+        #env:
+          #CYPRESS_username: ${{ secrets.CYPRESS_USERNAME }}
+          #CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
+          #CYPRESS_userId: ${{ secrets.CYPRESS_USERID }}
+      - name: Create screenshot
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-screenshot-regression
+          path: cypress/screenshots
+      - name: Create artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-video-regression
+          path: cypress/videos
