@@ -19,6 +19,8 @@ jobs:
   Cypress-run:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/Checkout@v2
       - name: Run cypress
         uses: cypress-io/github-action@v2
         with:
