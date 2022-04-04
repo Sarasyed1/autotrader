@@ -24,9 +24,9 @@
       cy.visit('https://www.autotrader.co.uk')
     })
 
-  it('iframe appears on page and accept it clicked', () => {
-    cy.iframe().find('#notice > div.message-component.message-row > div.message-component.message-column.unstack > button.message-component.message-button.no-children.focusable.sp_choice_type_11.last-focusable-el').should('be.visible').click()
-  })
+  //it('iframe appears on page and accept it clicked', () => {
+    //cy.iframe().find('#notice > div.message-component.message-row > div.message-component.message-column.unstack > button.message-component.message-button.no-children.focusable.sp_choice_type_11.last-focusable-el').should('be.visible').click()
+  //})
 
   it('click new cars', () => {
     cy.get(':nth-child(2) > .atds-primary-navigation__link').click()
@@ -36,7 +36,7 @@
   it('search for car', () => {
     cy.get(':nth-child(2) > .atds-primary-navigation__link').click()
     cy.url().should('include', 'https://www.autotrader.co.uk/cars/new')
-    cy.iframe().find('#notice > div.message-component.message-row > div.message-component.message-column.unstack > button.message-component.message-button.no-children.focusable.sp_choice_type_11.last-focusable-el').should('be.visible').click()
+    //cy.iframe().find('#notice > div.message-component.message-row > div.message-component.message-column.unstack > button.message-component.message-button.no-children.focusable.sp_choice_type_11.last-focusable-el').should('be.visible').click()
     cy.get('#make').select('Dodge')
     cy.get('#postcode').type('M337GG')
     cy.get('#content > article > section.atds-container.atds-container--fixed-wide.false.atds-hero.hero-reverse.new-car-hero > div.atds-hero__container > div.atds-hero__action.hero-reverse.new-car-hero__action > form > div.search-form > div.search-form__field.search-form__submit > button').click()
