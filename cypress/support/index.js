@@ -16,5 +16,18 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+Cypress.Server.defaults({
+    ignore: (xhr) => bool
+});
+// likely want to do this in a support file
+// so it's applied to all spec files
+// cypress/support/index.js
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+  })
+
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
