@@ -24,7 +24,7 @@ jobs:
       - name: Run cypress
         uses: cypress-io/github-action@v2
         with:
-          browser: chrome
+          browser: safari
         #env:
           #CYPRESS_username: ${{ secrets.CYPRESS_USERNAME }}
           #CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
